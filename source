@@ -1,0 +1,162 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Hacker = Instance.new("TextLabel")
+local Tank = Instance.new("TextLabel")
+local Nocooldown = Instance.new("TextButton")
+local Noreload = Instance.new("TextButton")
+local FastTank = Instance.new("TextButton")
+local Inffire = Instance.new("TextButton")
+local Hub = Instance.new("Frame")
+local Hub2 = Instance.new("TextLabel")
+local Loopkillall = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.Position = UDim2.new(0.0651369393, 0, 0.215339229, 0)
+Main.Size = UDim2.new(0, 424, 0, 172)
+Main.Draggable = true
+
+Hacker.Name = "Hacker"
+Hacker.Parent = Main
+Hacker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hacker.BackgroundTransparency = 1.000
+Hacker.Size = UDim2.new(0, 78, 0, 27)
+Hacker.Font = Enum.Font.SourceSans
+Hacker.Text = "Hacker"
+Hacker.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hacker.TextScaled = true
+Hacker.TextSize = 16.000
+Hacker.TextWrapped = true
+
+Tank.Name = "Tank"
+Tank.Parent = Main
+Tank.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tank.BackgroundTransparency = 1.000
+Tank.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Tank.Position = UDim2.new(0.33282727, 0, -0.00581395347, 0)
+Tank.Size = UDim2.new(0, 149, 0, 27)
+Tank.Font = Enum.Font.SourceSans
+Tank.Text = "Tank"
+Tank.TextColor3 = Color3.fromRGB(255, 200, 0)
+Tank.TextSize = 22.000
+
+Nocooldown.Name = "No cooldown"
+Nocooldown.Parent = Main
+Nocooldown.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Nocooldown.BorderColor3 = Color3.fromRGB(255, 170, 0)
+Nocooldown.Position = UDim2.new(0.537859142, 0, 0.664728701, 0)
+Nocooldown.Size = UDim2.new(0, 123, 0, 43)
+Nocooldown.Font = Enum.Font.SourceSans
+Nocooldown.Text = "no cooldown"
+Nocooldown.TextColor3 = Color3.fromRGB(255, 255, 255)
+Nocooldown.TextSize = 14.000
+Nocooldown.TextStrokeColor3 = Color3.fromRGB(255, 217, 0)
+Nocooldown.MouseButton1Down:connect(function()
+	mytank = workspace.Tanks["Tank-" .. game.Players.LocalPlayer.Name .. ""]
+	mytank.Settings.AbilityCooldown.Value = 0.1
+end)
+
+Noreload.Name = "No reload"
+Noreload.Parent = Main
+Noreload.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Noreload.BorderColor3 = Color3.fromRGB(255, 170, 0)
+Noreload.Position = UDim2.new(0.684085548, 0, 0.327519357, 0)
+Noreload.Size = UDim2.new(0, 123, 0, 43)
+Noreload.Font = Enum.Font.SourceSans
+Noreload.Text = "no reload"
+Noreload.TextColor3 = Color3.fromRGB(255, 255, 255)
+Noreload.TextSize = 14.000
+Noreload.TextStrokeColor3 = Color3.fromRGB(255, 217, 0)
+Noreload.MouseButton1Down:connect(function()
+	mytank = workspace.Tanks["Tank-" .. game.Players.LocalPlayer.Name .. ""]
+	mytank.Settings.LoadedShots.Value = 2000000000
+end)
+
+FastTank.Name = "Fast Tank"
+FastTank.Parent = Main
+FastTank.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FastTank.BorderColor3 = Color3.fromRGB(255, 170, 0)
+FastTank.Position = UDim2.new(0.353919238, 0, 0.327519387, 0)
+FastTank.Size = UDim2.new(0, 123, 0, 43)
+FastTank.Font = Enum.Font.SourceSans
+FastTank.Text = "fast tank"
+FastTank.TextColor3 = Color3.fromRGB(255, 255, 255)
+FastTank.TextSize = 14.000
+FastTank.TextStrokeColor3 = Color3.fromRGB(255, 217, 0)
+FastTank.MouseButton1Down:connect(function()
+	mytank = workspace.Tanks["Tank-" .. game.Players.LocalPlayer.Name .. ""]
+	mytank.Settings.MoveSpeed.Value = 50
+	mytank.Settings.RotationSpeed.Value = math.huge
+end)
+
+Inffire.Name = "Inf fire"
+Inffire.Parent = Main
+Inffire.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Inffire.BorderColor3 = Color3.fromRGB(255, 170, 0)
+Inffire.Position = UDim2.new(0.0166270789, 0, 0.327519387, 0)
+Inffire.Size = UDim2.new(0, 123, 0, 43)
+Inffire.Font = Enum.Font.SourceSans
+Inffire.Text = "inf fire"
+Inffire.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inffire.TextSize = 14.000
+Inffire.TextStrokeColor3 = Color3.fromRGB(255, 217, 0)
+Inffire.MouseButton1Down:connect(function()
+	mytank = workspace.Tanks["Tank-" .. game.Players.LocalPlayer.Name .. ""]
+	mytank.Settings.MaxFireRate.Value = 0
+end)
+
+Hub.Name = "Hub"
+Hub.Parent = Main
+Hub.BackgroundColor3 = Color3.fromRGB(255, 171, 1)
+Hub.Position = UDim2.new(0.185273156, 0, 0, 0)
+Hub.Size = UDim2.new(0, 44, 0, 27)
+
+Hub2.Name = "Hub 2"
+Hub2.Parent = Hub
+Hub2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hub2.BackgroundTransparency = 1.000
+Hub2.Position = UDim2.new(-0.176470518, 0, 0.111111112, 0)
+Hub2.Size = UDim2.new(0, 60, 0, 21)
+Hub2.Font = Enum.Font.SourceSans
+Hub2.Text = "hub"
+Hub2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Hub2.TextSize = 29.000
+Hub2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+Loopkillall.Name = "Loop kill all"
+Loopkillall.Parent = Main
+Loopkillall.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Loopkillall.BorderColor3 = Color3.fromRGB(255, 170, 0)
+Loopkillall.Position = UDim2.new(0.184085533, 0, 0.664728701, 0)
+Loopkillall.Size = UDim2.new(0, 123, 0, 43)
+Loopkillall.Font = Enum.Font.SourceSans
+Loopkillall.Text = "loop kill all"
+Loopkillall.TextColor3 = Color3.fromRGB(255, 255, 255)
+Loopkillall.TextSize = 14.000
+Loopkillall.TextStrokeColor3 = Color3.fromRGB(255, 217, 0)
+Loopkillall.MouseButton1Down:connect(function()
+	local A_1 = 0
+	local A_3 =  {}
+	local Event = game:GetService("ReplicatedStorage").Remotes.FireBullet
+	while wait() do
+		a=game.Players:GetChildren()
+		for i=2,#a do v=a[i]
+			pcall(function()
+				if v.Team~=game.Players.LocalPlayer.Team then
+					local A_2 = workspace.Tanks['Tank-'..v.Name].Base.CFrame
+					Event:FireServer(A_1, A_2, A_3)
+				end
+			end)
+		end
+	end
+end)
