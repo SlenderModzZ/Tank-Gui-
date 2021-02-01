@@ -1,7 +1,4 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+---By SlenderModzZ
 
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -24,6 +21,7 @@ Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Main.Position = UDim2.new(0.0651369393, 0, 0.215339229, 0)
 Main.Size = UDim2.new(0, 424, 0, 172)
+Main.Active = true
 Main.Draggable = true
 
 Hacker.Name = "Hacker"
